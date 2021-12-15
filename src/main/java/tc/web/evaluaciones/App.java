@@ -44,7 +44,7 @@ public class App
         //ItzNadia
         BasicConfigurator.configure();
         port(getHerokuAssignedPort());
-        staticFileLocation("/public");
+        staticFileLocation(projectDir+"/src/main/resources/public");
         //File uploadDir = new File("upload");
         //uploadDir.mkdir(); // create the upload directory if it doesn't exist
         //staticFiles.externalLocation("upload");
