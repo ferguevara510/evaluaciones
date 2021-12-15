@@ -319,25 +319,6 @@ public class App
             return true;
         });
 
-        post("/upload/:matricula/:folioExamen/:idPregunta/:pagina", (request, response)->{
-            String matricula = request.params(":matricula");
-            Integer idPregunta = Integer.parseInt(request.params(":idPregunta"));
-            Integer folioExamen = Integer.parseInt(request.params(":folioExamen"));
-            Integer pagina = Integer.parseInt(request.params(":pagina"));
-            Path tempFile = Files.createTempFile(uploadDir.toPath(), "", "");
-            
-            request.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/temp"));
-            
-            try (InputStream input = request.raw().getPart("videoGrabado").getInputStream()) { // getPart needs to use same "name" as input field in form
-                Files.copy(input, tempFile, StandardCopyOption.REPLACE_EXISTING);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-            // Pregunta.registrarRespuestaMultimedia(matricula, folioExamen, idPregunta, tempFile.getFileName().toString());
-            
-            return  "/presentarExamen/"+matricula+"/"+folioExamen+"/"+(pagina+1);
-        });
-
         get("/upload/:matricula/:folioExamen/:idPregunta/:pagina",(request,response) ->{
             Map map = new HashMap<String,Object>();
             String matricula = request.params(":matricula");
