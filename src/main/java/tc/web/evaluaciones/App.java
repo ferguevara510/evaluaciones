@@ -42,7 +42,7 @@ public class App
     {
         //Fer Guevara
         //ItzNadia
-        //BasicConfigurator.configure();
+        BasicConfigurator.configure();
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
         //File uploadDir = new File("upload");
