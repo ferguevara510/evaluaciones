@@ -35,8 +35,8 @@ public class App
     {
         //Fer Guevara
         //ItzNadia
-        BasicConfigurator.configure();
-        port(8080);
+        //BasicConfigurator.configure();
+        port(80);
         staticFileLocation("/public");
 
         options("/*", (request, response) -> {
