@@ -66,17 +66,17 @@ public class App
 
         before((request, response) -> {
             response.header("Access-Control-Allow-Origin", "*");
-            String uri = request.uri();
-            String method = request.requestMethod();
-            Session sesion = request.session();
-            if(!uri.equals("/login") && uri.indexOf("css") == -1 && sesion.attribute("usuario") == null){
-                if(method.equals("GET") && !uri.equals("/loginAlumno")){
-                    if(sesion.attribute("matricula") == null){
-                        response.redirect("/login");
-                    }
+            //String uri = request.uri();
+            //String method = request.requestMethod();
+            //Session sesion = request.session();
+            //if(!uri.equals("/login") && uri.indexOf("css") == -1 && sesion.attribute("usuario") == null){
+                //if(method.equals("GET") && !uri.equals("/loginAlumno")){
+                    //if(sesion.attribute("matricula") == null){
+                        //response.redirect("/login");
+                    //}
                     
-                }
-            }
+                //}
+            //}
             
         });
 
