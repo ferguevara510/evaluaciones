@@ -108,11 +108,9 @@
                     <descriptorRef>jar-with-dependencies</descriptorRef>
                 </descriptorRefs>
                 <archive>
-                    <archive>
                       <manifest>
                         <mainClass>tc.web.evaluaciones.App</mainClass>
                       </manifest>
-                    </archive>
                 </archive>
             </configuration>
         </plugin>
