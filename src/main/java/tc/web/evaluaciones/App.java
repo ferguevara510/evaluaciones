@@ -42,6 +42,7 @@ public class App
     {
         //Fer Guevara
         //ItzNadia
+        String projectDir = System.getProperty("user.dir");
         BasicConfigurator.configure();
         port(getHerokuAssignedPort());
         staticFileLocation(projectDir+"/src/main/resources/public");
