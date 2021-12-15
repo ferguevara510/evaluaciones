@@ -83,7 +83,7 @@ public class App
 
         get("/login", (request, response) -> { 
             Map map = new HashMap<String,Object>(); 
-            return new ModelAndView(map,"login.mustache"); 
+            return new ModelAndView(map,"/login.mustache"); 
         }, new MustacheTemplateEngine());
 
         get("/examenesProfesor", (request, response) -> { 
