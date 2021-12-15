@@ -131,8 +131,7 @@
             <web>java -jar ./target/app-velocity-1.0-SNAPSHOT-jar-with-dependencies.jar</web>
           </processTypes>
         </configuration>
-      </plugin>
-
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
