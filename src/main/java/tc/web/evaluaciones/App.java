@@ -81,8 +81,11 @@ public class App
             
         });
 
+        get("/", (request, response) -> { 
+            return "hola";
+        });
 
-        get("/login", (request, response) -> { 
+        /*get("/login", (request, response) -> { 
             Map map = new HashMap<String,Object>(); 
             return new ModelAndView(map,"/login.mustache"); 
         }, new MustacheTemplateEngine());
@@ -345,6 +348,7 @@ public class App
             throw new RuntimeException("IOException from a StringWriter?");
         }
     }
+    */
 
     public static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
