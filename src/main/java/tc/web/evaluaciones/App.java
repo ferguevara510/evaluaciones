@@ -43,11 +43,11 @@ public class App
         //Fer Guevara
         //ItzNadia
         //BasicConfigurator.configure();
-        port(80);
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
-        File uploadDir = new File("upload");
-        uploadDir.mkdir(); // create the upload directory if it doesn't exist
-        staticFiles.externalLocation("upload");
+        //File uploadDir = new File("upload");
+        //uploadDir.mkdir(); // create the upload directory if it doesn't exist
+        //staticFiles.externalLocation("upload");
 
         options("/*", (request, response) -> {
 
