@@ -85,7 +85,7 @@ public class App
             return "hola";
         });
 
-        /*get("/login", (request, response) -> { 
+        /* get("/login", (request, response) -> { 
             Map map = new HashMap<String,Object>(); 
             return new ModelAndView(map,"/login.mustache"); 
         }, new MustacheTemplateEngine());
@@ -334,7 +334,7 @@ public class App
             map.put("folioExamen", folioExamen);
             map.put("pagina", pagina);
             return new ModelAndView(map,"multimedia.mustache"); 
-        }, new MustacheTemplateEngine());
+        }, new MustacheTemplateEngine()); */
     }
 
     public static String dataToJson(Object data) {
@@ -348,7 +348,7 @@ public class App
             throw new RuntimeException("IOException from a StringWriter?");
         }
     }
-    */
+   
 
     public static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
@@ -357,4 +357,4 @@ public class App
         }
         return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
     }
-}}
+}
