@@ -109,7 +109,7 @@
                 </descriptorRefs>
                 <archive>
                       <manifest>
-                        <mainClass>tc.web.evaluaciones.App</mainClass>
+                        <mainClass>App</mainClass>
                       </manifest>
                 </archive>
             </configuration>
