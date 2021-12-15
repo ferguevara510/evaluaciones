@@ -94,6 +94,28 @@
           <version>3.0.0</version>
         </plugin>
       </plugins>
+      <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>single</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <descriptorRefs>
+                    <!-- This tells Maven to include all dependencies -->
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+                <archive>
+                    <manifest>
+                        <mainClass>Main</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
     </pluginManagement>
   </build>
 </project>

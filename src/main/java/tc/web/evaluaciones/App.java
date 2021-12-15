@@ -42,8 +42,8 @@ public class App
     {
         //Fer Guevara
         //ItzNadia
-        BasicConfigurator.configure();
-        port(8080);
+        //BasicConfigurator.configure();
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
         File uploadDir = new File("upload");
         uploadDir.mkdir(); // create the upload directory if it doesn't exist
@@ -362,5 +362,13 @@ public class App
         } catch (IOException e){
             throw new RuntimeException("IOException from a StringWriter?");
         }
+    }
+
+    public static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
     }
 }
