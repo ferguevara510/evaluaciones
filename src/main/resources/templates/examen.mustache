@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/examProf.css">
+        <title> Examen </title>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li><a href="/examenesProfesor">Examenes</a></li>
+                <li><a href="/listaAlumnos">Alumnos</a></li>
+                <li style="float:right"><a class="active" href="/login">Cerrar sesión</a></li>
+            </ul>
+        </div>
+        <div class="seccion-examen">
+            <table>
+                <thead>
+                    <tr><th colspan="3" scope="col">{{examen.nombre}}</th></hr>
+                    <tr><th colspan="3" scope="col"> De {{examen.fechaInicio}} a {{examen.fechaFin}}</th></tr>
+                </thead>
+            </table>
+            <div class="lista-preguntas">
+                <span><strong>Preguntas</strong></span>
+                <ul>
+                    {{#preguntas}}
+                    <li class="nombre-pregunta"><a href="/registrarRespuesta/{{id}}">{{descripcion}}</a></li>
+                    {{/preguntas}}
+                </ul>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="boton_personalizado"><a href="/crearPregunta/{{examen.folioExamen}}">Agregar pregunta</a></button>
+        </div>
+        
+    </body>
+</html>

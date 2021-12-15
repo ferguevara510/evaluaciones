@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> Examenes Alumno </title>    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/exam.css">
+        <style type="text/css"></style>
+    </head>
+    
+    <body>
+        <div>
+            <ul>
+                <li><a href="/examenesAlumnos">Examenes</a></li>
+                <li style="float:right"><a class="active" href="/loginAlumno">Cerrar sesión</a></li>
+            </ul>
+        </div>
+        <div>
+            <table summary="Examenes">
+                <thead>
+                    <tr>
+                        <th scope="col">EVALUACIONES</th>
+                        <th scope="col">CALIFICACIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#examenes}}
+                    <tr>
+                        <td scope="row">{{^realizado}}<a href="/presentarExamen/{{matricula}}/{{folioExamen}}/0">{{/realizado}}{{nombre}}{{^realizado}}</a>{{/realizado}}</td>
+                        <td>{{calificacion}}</td>
+                    </tr>
+                    {{/examenes}}
+                </tfoot>
+            </table>
+        </div>
+    </body>
+</html>
