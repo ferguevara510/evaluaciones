@@ -42,10 +42,10 @@ public class App
     {
         //Fer Guevara
         //ItzNadia
-        String projectDir = System.getProperty("user.dir");
+
         BasicConfigurator.configure();
         port(getHerokuAssignedPort());
-        staticFileLocation(projectDir+"/src/main/resources/public");
+        staticFileLocation("/public");
         //File uploadDir = new File("upload");
         //uploadDir.mkdir(); // create the upload directory if it doesn't exist
         //staticFiles.externalLocation("upload");
@@ -330,7 +330,7 @@ public class App
             map.put("folioExamen", folioExamen);
             map.put("pagina", pagina);
             return new ModelAndView(map,"multimedia.mustache"); 
-        }, new MustacheTemplateEngine()); */
+        }, new MustacheTemplateEngine());
     }
 
     public static String dataToJson(Object data) {
