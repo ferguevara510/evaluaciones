@@ -111,8 +111,7 @@ public class App
         post("/loginProfesor", (request, response) -> {
             String usuario = request.queryParams("usuario");
             String contraseña = request.queryParams("password");
-            System.out.println(usuario);
-            System.out.println(contraseña);
+
             Map map = new HashMap<String,Object>(); 
             boolean validacion = Profesor.iniciarSesion(usuario, contraseña);
             if(validacion){
@@ -128,8 +127,6 @@ public class App
         post("/loginAlumno", (request, response) -> {
             String usuario = request.queryParams("matricula");
             String contraseña = request.queryParams("password");
-            System.out.println(usuario);
-            System.out.println(contraseña);
             Map map = new HashMap<String,Object>(); 
             boolean validacion = Alumno.iniciarSesion(usuario, contraseña);
             if(validacion){
