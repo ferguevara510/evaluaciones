@@ -11,7 +11,7 @@ public class ConnectionDB{
     public static Connection createConnection(){
         Connection connection = null;
         try{
-            connection = DriverManager.getConnection("jdbc:mariadb://localhost/evaluaciones", "root", null);
+            connection = DriverManager.getConnection("jdbc:mariadb://db4free.net:3306/evaluaciones1", "nadiaitzel", "Lovato01");
         }catch(Exception exception){
 
         }
